@@ -1,4 +1,4 @@
-![Blurry](https://raw.github.com/piemonte/blurry/master/Blurry.png)
+![Blurry](https://github.com/piemonte/Blurry/blob/master/Blurry.png)
 
 ## Blurry 🌫
 
