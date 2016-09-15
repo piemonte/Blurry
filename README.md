@@ -40,7 +40,7 @@ let package = Package(
 ## Usage
 
 ``` Swift
-   import Blurry
+import Blurry
 ```
 
 ```swift
