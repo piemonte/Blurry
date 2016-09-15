@@ -45,7 +45,7 @@ public struct BlurryOptions: OptionSet {
     static let all: BlurryOptions = [.dithered, .hardEdged, .saturated, .brightened]
 }
 
-public class Blurry: NSObject {
+public final class Blurry {
     
     public class func blurryImage(forImage image: UIImage, size: CGSize, blurRadius: CGFloat) -> UIImage? {
         return self.blurryImage(withOptions: .none, overlayColor: nil, forImage: image, size: size, blurRadius: blurRadius)
