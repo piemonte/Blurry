@@ -49,7 +49,6 @@ let blurryImage = originalImage.blurryImage(blurRadius: 12.0)
 
 // or if you prefer no extension, an example with more parameters
 let blurryImage = Blurry.blurryImage(withOptions: BlurryOptions.pro, overlayColor: overlayColor, forImage: sampleImage, size: sampleImage.size, blurRadius: 12.0)
-            
 
 ```
 
