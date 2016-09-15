@@ -1,3 +1,5 @@
+![Blurry](https://raw.github.com/piemonte/blurry/master/Blurry.png)
+
 ## Blurry 🌫
 
 Image blurring in [Swift](https://developer.apple.com/swift/).
