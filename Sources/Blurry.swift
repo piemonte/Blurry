@@ -130,3 +130,21 @@ public final class Blurry {
         return outputImage
     }
 }
+
+// MARK: - UIImage extension
+
+extension UIImage {
+    
+    public func blurryImage(blurRadius: CGFloat) -> UIImage? {
+        return Blurry.blurryImage(withOptions: .none, overlayColor: nil, forImage: self, size: self.size, blurRadius: blurRadius)
+    }
+    
+    public func blurryImage(withOptions options: BlurryOptions, blurRadius: CGFloat) -> UIImage? {
+        return Blurry.blurryImage(withOptions: options, overlayColor: nil, forImage: self, size: self.size, blurRadius: blurRadius)
+    }
+    
+    public func blurryImage(withOptions options: BlurryOptions, overlayColor: UIColor?, blurRadius: CGFloat) -> UIImage? {
+        return Blurry.blurryImage(withOptions: options, overlayColor: overlayColor, forImage: self, size: self.size, blurRadius: blurRadius)
+    }
+    
+}
