@@ -27,6 +27,7 @@ import UIKit
 import CoreImage
 import CoreGraphics
 
+/// Options for how a blur should be rendered. A few helper multi-options are available, such as 'pro'.
 public struct BlurryOptions: OptionSet {
     public let rawValue: Int
     
@@ -45,16 +46,41 @@ public struct BlurryOptions: OptionSet {
     static let all: BlurryOptions = [.dithered, .hardEdged, .saturated, .brightened]
 }
 
+/// 🌫 Blurry, image blurring in Swift
 public final class Blurry {
     
+    /// Creates a blurred UIImage.
+    ///
+    /// - Parameters:
+    ///   - image: Input image to blur.
+    ///   - size: Desired resulting size.
+    ///   - blurRadius: A scalar value that specifies the distance from the center of an blur.
+    /// - Returns: Resulting blurred image.
     public class func blurryImage(forImage image: UIImage, size: CGSize, blurRadius: CGFloat) -> UIImage? {
         return self.blurryImage(withOptions: .none, overlayColor: nil, forImage: image, size: size, blurRadius: blurRadius)
     }
     
+    /// Creates a blurred UIImage with some additional options.
+    ///
+    /// - Parameters:
+    ///   - options: Bit mask type representing the blurring operations to perform on the input.
+    ///   - image: Input image to blur.
+    ///   - size: Desired resulting size.
+    ///   - blurRadius: A scalar value that specifies the distance from the center of an blur.
+    /// - Returns: Resulting blurred image.
     public class func blurryImage(withOptions options: BlurryOptions, forImage image: UIImage, size: CGSize, blurRadius: CGFloat) -> UIImage? {
         return self.blurryImage(withOptions: options, overlayColor: nil, forImage: image, size: size, blurRadius: blurRadius)
     }
     
+    /// Creates a blurred UIImage with some additional options and overlay color.
+    ///
+    /// - Parameters:
+    ///   - options: Bit mask type representing the blurring operations to perform on the input.
+    ///   - overlayColor: Color composited over the image.
+    ///   - image: Input image to blur.
+    ///   - size: Desired resulting size.
+    ///   - blurRadius: A scalar value that specifies the distance from the center of an blur.
+    /// - Returns: Resulting blurred image.
     public class func blurryImage(withOptions options: BlurryOptions, overlayColor: UIColor?, forImage image: UIImage, size: CGSize, blurRadius: CGFloat) -> UIImage? {
         var outputImage: UIImage? = nil
 
@@ -135,14 +161,31 @@ public final class Blurry {
 
 extension UIImage {
     
+    /// An extension on UIImage that blurs the UIImage.
+    ///
+    /// - Parameter blurRadius: A scalar value that specifies the distance from the center of an blur.
+    /// - Returns: Resulting blurred image.
     public func blurryImage(blurRadius: CGFloat) -> UIImage? {
         return Blurry.blurryImage(withOptions: .none, overlayColor: nil, forImage: self, size: self.size, blurRadius: blurRadius)
     }
     
+    /// An extension on UIImage that blurs the UIImage with some additional options.
+    ///
+    /// - Parameters:
+    ///   - options: Bit mask type representing the blurring operations to perform on the input.
+    ///   - blurRadius: A scalar value that specifies the distance from the center of an blur.
+    /// - Returns: Resulting blurred image.
     public func blurryImage(withOptions options: BlurryOptions, blurRadius: CGFloat) -> UIImage? {
         return Blurry.blurryImage(withOptions: options, overlayColor: nil, forImage: self, size: self.size, blurRadius: blurRadius)
     }
     
+    /// An extension on UIIMage that blurs the UIImage with some additional options and overlay color.
+    ///
+    /// - Parameters:
+    ///   - options: Bit mask type representing the blurring operations to perform on the input.
+    ///   - overlayColor: Color composited over the image.
+    ///   - blurRadius: A scalar value that specifies the distance from the center of an blur.
+    /// - Returns: Resulting blurred image.
     public func blurryImage(withOptions options: BlurryOptions, overlayColor: UIColor?, blurRadius: CGFloat) -> UIImage? {
         return Blurry.blurryImage(withOptions: options, overlayColor: overlayColor, forImage: self, size: self.size, blurRadius: blurRadius)
     }
