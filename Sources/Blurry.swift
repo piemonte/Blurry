@@ -35,15 +35,15 @@ public struct BlurryOptions: OptionSet {
         self.rawValue = rawValue
     }
     
-    static let unspecified = BlurryOptions(rawValue: 0)
-    static let dithered    = BlurryOptions(rawValue: 1 << 0)
-    static let hardEdged   = BlurryOptions(rawValue: 1 << 1)
-    static let saturated   = BlurryOptions(rawValue: 1 << 2)
-    static let brightened  = BlurryOptions(rawValue: 1 << 3)
+    public static let unspecified = BlurryOptions(rawValue: 0)
+    public static let dithered    = BlurryOptions(rawValue: 1 << 0)
+    public static let hardEdged   = BlurryOptions(rawValue: 1 << 1)
+    public static let saturated   = BlurryOptions(rawValue: 1 << 2)
+    public static let brightened  = BlurryOptions(rawValue: 1 << 3)
     
-    static let none: BlurryOptions = (rawValue: unspecified)
-    static let pro: BlurryOptions = [.hardEdged, .saturated]
-    static let all: BlurryOptions = [.dithered, .hardEdged, .saturated, .brightened]
+    public static let none: BlurryOptions = (rawValue: unspecified)
+    public static let pro: BlurryOptions = [.hardEdged, .saturated]
+    public static let all: BlurryOptions = [.dithered, .hardEdged, .saturated, .brightened]
 }
 
 /// 🌫 Blurry, image blurring in Swift
