@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name = 'Blurry'
-  s.version = '0.0.2'
+  s.version = '0.0.3'
   s.license = 'MIT'
   s.summary = 'Image Blurring in Swift'
   s.homepage = 'https://github.com/piemonte/Blurry'
