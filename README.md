@@ -16,15 +16,8 @@ This library is a small CoreImage wrapper that performs a variety of blurring te
 
 ```ruby
 # CocoaPods
+swift_version = "3.0"
 pod "Blurry", "~> 0.0.1"
-
-post_install do |installer|
-  installer.pods_project.targets.each do |target|
-    target.build_configurations.each do |config|
-      config.build_settings['SWIFT_VERSION'] = '3.0'
-    end
-  end
-end
 
 # Carthage
 github "piemonte/Blurry" ~> 0.0.1
