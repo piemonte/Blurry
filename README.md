@@ -4,7 +4,7 @@
 
 Image blurring in [Swift](https://developer.apple.com/swift/).
 
-[![Build Status](https://travis-ci.org/piemonte/Blurry.svg?branch=master)](https://travis-ci.org/piemonte/Blurry) [![Pod Version](https://img.shields.io/cocoapods/v/Blurry.svg?style=flat)](http://cocoadocs.org/docsets/Blurry/)
+[![Build Status](https://travis-ci.org/piemonte/Blurry.svg?branch=master)](https://travis-ci.org/piemonte/Blurry) [![Pod Version](https://img.shields.io/cocoapods/v/Blurry.svg?style=flat)](http://cocoadocs.org/docsets/Blurry/) [![Swift Version](https://img.shields.io/badge/language-swift%203.0-brightgreen.svg)](https://developer.apple.com/swift) [![GitHub license](https://img.shields.io/badge/license-MIT-lightgrey.svg)](https://github.com/piemonte/Blurry/blob/master/LICENSE)
 
 This library is a small CoreImage wrapper that performs a variety of blurring techniques based on the given parameters.
 
