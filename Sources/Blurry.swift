@@ -41,7 +41,7 @@ public struct BlurryOptions: OptionSet {
     public static let saturated   = BlurryOptions(rawValue: 1 << 2)
     public static let brightened  = BlurryOptions(rawValue: 1 << 3)
     
-    public static let none: BlurryOptions = (rawValue: unspecified)
+    public static let none: BlurryOptions = unspecified
     public static let pro: BlurryOptions = [.hardEdged, .saturated]
     public static let all: BlurryOptions = [.dithered, .hardEdged, .saturated, .brightened]
 }
