@@ -41,7 +41,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
 
         if let sampleImage = UIImage(named: "sampleImage") {
-            let overlayColor = UIColor(colorLiteralRed: 1, green: 1, blue: 1, alpha: 0.75)
+            let overlayColor = UIColor(white: 1, alpha: 0.75)
             let blurredImage = Blurry.blurryImage(withOptions: BlurryOptions.pro, overlayColor: overlayColor, forImage: sampleImage, size: sampleImage.size, blurRadius: 12.0)
             let blurredImageView = UIImageView(image: blurredImage)
             blurredImageView.contentMode = .scaleAspectFill

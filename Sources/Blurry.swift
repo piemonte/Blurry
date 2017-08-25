@@ -112,25 +112,25 @@ public final class Blurry {
                 
                 // apply saturation
                 if options.contains(.saturated) {
-                    ciimage.applyingFilter("CIColorControls", withInputParameters: [kCIInputSaturationKey:2.0])
+                    ciimage.applyingFilter("CIColorControls", parameters: [kCIInputSaturationKey:2.0])
                 }
                 
                 // apply brightness
                 if options.contains(.brightened) {
-                    ciimage.applyingFilter("CIColorControls", withInputParameters: [kCIInputBrightnessKey:6.0])
+                    ciimage.applyingFilter("CIColorControls", parameters: [kCIInputBrightnessKey:6.0])
                 }
                 
                 // apply blur through to edge
                 if options.contains(.hardEdged) {
-                    ciimage = ciimage.clampingToExtent()
+                    ciimage = ciimage.clampedToExtent()
                 }
                 
-                ciimage = ciimage.applyingFilter("CIGaussianBlur", withInputParameters: [kCIInputRadiusKey:blurRadius])
+                ciimage = ciimage.applyingFilter("CIGaussianBlur", parameters: [kCIInputRadiusKey:blurRadius])
                 
                 // apply overlay color
                 if let color = overlayColor {
                     let constantColorImage = CIImage(color: CIColor(cgColor: color.cgColor))
-                    ciimage = constantColorImage.compositingOverImage(ciimage)
+                    ciimage = constantColorImage.composited(over: ciimage)
                 }
                 
                 // apply dither
@@ -141,8 +141,8 @@ public final class Blurry {
                                            "inputGVector": monochromeVec,
                                            "inputBVector": monochromeVec,
                                            "inputAVector": CIVector(x: 0, y: 0, z: 0, w: 0.04)]
-                        let noiseImage = randomImage.applyingFilter("CIColorMatrix", withInputParameters: inputParams)
-                        ciimage = noiseImage.compositingOverImage(ciimage)
+                        let noiseImage = randomImage.applyingFilter("CIColorMatrix", parameters: inputParams)
+                        ciimage = noiseImage.composited(over: ciimage)
                     }
                 }
                 
