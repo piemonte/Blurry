@@ -105,7 +105,7 @@ public final class Blurry {
                     // Note:
                     // To request that Core Image perform no color management, specify the NSNull object as the value for this key.
                     // https://developer.apple.com/reference/coreimage/kcicontextworkingcolorspace
-                    static var cicontext: CIContext? = CIContext(options: [kCIContextWorkingColorSpace:NSNull()])
+                    static var cicontext: CIContext? = CIContext(options: [CIContextOption.workingColorSpace : NSNull()] )
                 }
                 let imageRect = bitmapContext.boundingBoxOfClipPath
                 var ciimage = CIImage(cgImage: blurryCGImage)
